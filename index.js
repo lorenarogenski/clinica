@@ -30,20 +30,30 @@ while (true) {
                     consulta.medico = prompt("Nome do médico(a): ");
                     consulta.data = prompt("Data da consulta: ");
                     consulta.hora = prompt("Horário da consulta: ");
-                    
+
+                    consulta.push(consulta);
+                    console.log("Consulta cadastrada com sucesso! ")
                     break;
 
-                    case "2":
+                    case "2", "4":
+                        consulta.forEach(function (consulta, indice) {
+                        console.log(`
+                    Consulta ${indice + 1}:
+                    Paciente: ${consulta.paciente}
+                    Médico (a): ${consulta.medico}
+                    Data: ${consulta.data}
+                    Horário: ${consulta.hora}`)
+                        })
 
+                        if(opcao === "4") {
+                            let indice = prompt("Escolha uma consulta: ");
+                            consultas.splice(indice -1, 1);
+                        }
                         break;
 
                             case "3": 
 
                                 break;
-
-                                    case "4":
-
-                                        break;
 
                                             case "5":
 
